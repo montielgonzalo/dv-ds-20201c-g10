@@ -19,15 +19,13 @@ import ar.edu.davinci.dvds20201cg10.repositorio.ClienteRepositorio;
 public class ClienteServicio {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(ClienteServicio.class);
-	 
-	
+
 	private final ClienteRepositorio clienteRepositorio;
 
 	@Autowired
 	public ClienteServicio(final ClienteRepositorio clienteRepositorio) {
 		this.clienteRepositorio = clienteRepositorio;
 	}
-
 
 	public List<Cliente> listarClientes() {
 		return clienteRepositorio.findAll();
