@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `dv-ds-20201C-g000` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `dv-ds-20201C-g000`;
+CREATE DATABASE  IF NOT EXISTS `dv-ds-20201c-g10` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `dv-ds-20201c-g10`;
 -- MySQL dump 10.13  Distrib 8.0.20, for macos10.15 (x86_64)
 --
--- Host: localhost    Database: dv-ds-20201C-g000
+-- Host: localhost    Database: dv-ds-20201c-g10
 -- ------------------------------------------------------
 -- Server version	8.0.20
 
