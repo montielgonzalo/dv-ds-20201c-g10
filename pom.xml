@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ar.edu.davinci</groupId>
-	<artifactId>dv-ds-20201c-g10</artifactId>
+	<artifactId>dv-ds-20201c-g000</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dv-ds-20201c-g10</name>
+	<name>dv-ds-20201c-g000</name>
 	<description>Escuela Davinci - Diseño de Sistema - Trabajo Final</description>
 
 	<properties>
@@ -24,6 +24,9 @@
         <webjars-bootstrap.version>2.3.0</webjars-bootstrap.version>
         <webjars-jquery-ui.version>1.9.2</webjars-jquery-ui.version>
         <webjars-jquery.version>1.9.0</webjars-jquery.version>
+        <dandelion.datatables.version>0.8.7</dandelion.datatables.version>
+
+
 	</properties>
 
 	<dependencies>
@@ -51,13 +54,12 @@
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-client</artifactId>
 		</dependency>
-
+		
 		<!-- Agregado de Spring Validation -->
-		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-validation</artifactId>
+		<dependency> 
+		    <groupId>org.springframework.boot</groupId> 
+		    <artifactId>spring-boot-starter-validation</artifactId> 
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -75,11 +77,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
 		<dependency>
@@ -87,14 +84,13 @@
 		    <artifactId>validation-api</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
 		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-collections4</artifactId>
-		    <version>4.4</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 
-		<!-- Webjars (static dependencies distributed as JAR files) -->
+        <!-- Webjars (static dependencies distributed as JAR files) -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
@@ -111,7 +107,14 @@
             <version>${webjars-jquery.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/ma.glasnost.orika/orika-core -->
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-collections4</artifactId>
+		    <version>4.4</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/ma.glasnost.orika/orika-core -->
 		<dependency>
 		    <groupId>ma.glasnost.orika</groupId>
 		    <artifactId>orika-core</artifactId>
@@ -122,7 +125,6 @@
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-lang3</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -174,6 +176,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
