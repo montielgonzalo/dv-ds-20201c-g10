@@ -1,6 +1,7 @@
-create DATABASE  IF NOT EXISTS `dv-ds-20201c-g10`
+CREATE DATABASE  IF NOT EXISTS `dv-ds-20201c-g10`
 
-/*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci */
+ALTER DATABASE dv-ds-20201c-g10 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 /*!80016 DEFAULT ENCRYPTION='N' */;
 
 USE `dv-ds-20201c-g10`;
@@ -36,7 +37,7 @@ create TABLE `clientes` (
   `cli_password` varchar(50) NOT NULL,
   PRIMARY KEY (`cli_id`),
   UNIQUE KEY `cli_email_UNIQUE` (`cli_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +49,7 @@ create TABLE `clientes` (
 -- /*!50503 SET character_set_client = utf8 */;
 -- CREATE TABLE `hibernate_sequence` (
 --   `next_val` bigint DEFAULT NULL
--- ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+-- ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 -- /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +69,7 @@ create TABLE `orden_items` (
   KEY `odi_pro_id_fk_idx` (`odi_prd_id`),
   CONSTRAINT `odi_ord_id_fk` FOREIGN KEY (`odi_ord_id`) REFERENCES `ordenes` (`ord_id`),
   CONSTRAINT `odi_pro_id_fk` FOREIGN KEY (`odi_prd_id`) REFERENCES `productos` (`pro_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +86,7 @@ create TABLE `ordenes` (
   PRIMARY KEY (`ord_id`),
   KEY `ord_cli_id_fk_idx` (`ord_cli_id`),
   CONSTRAINT `ord_cli_id_fk` FOREIGN KEY (`ord_cli_id`) REFERENCES `clientes` (`cli_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +102,7 @@ create TABLE `productos` (
   `pro_precio` decimal(8,2) NOT NULL,
   PRIMARY KEY (`pro_id`),
   UNIQUE KEY `pro_nombre_UNIQUE` (`pro_nombre`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
