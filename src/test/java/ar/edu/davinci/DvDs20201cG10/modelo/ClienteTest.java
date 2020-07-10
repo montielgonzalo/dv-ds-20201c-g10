@@ -1,25 +1,21 @@
 package ar.edu.davinci.DvDs20201cG10.modelo;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.List;
-import java.util.Optional;
-
+import ar.edu.davinci.DvDs20201cG10.repositorio.ClienteRepositorio;
+import ar.edu.davinci.DvDs20201cG10.servicio.ClienteServicio;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.internal.matchers.Equals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import ar.edu.davinci.DvDs20201cG10.modelo.Cliente;
-import ar.edu.davinci.DvDs20201cG10.repositorio.ClienteRepositorio;
-import ar.edu.davinci.DvDs20201cG10.servicio.ClienteServicio;
+import java.util.List;
+import java.util.Optional;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.CoreMatchers.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @SpringBootTest
