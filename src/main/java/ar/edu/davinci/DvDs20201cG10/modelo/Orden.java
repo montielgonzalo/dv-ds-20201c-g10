@@ -77,4 +77,7 @@ public class Orden {
 		}
 	}
 
+	public Date getDate() {
+		return new Date();
+	}
 }

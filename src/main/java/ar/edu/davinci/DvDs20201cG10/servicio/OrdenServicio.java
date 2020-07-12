@@ -2,6 +2,7 @@ package ar.edu.davinci.DvDs20201cG10.servicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import ar.edu.davinci.DvDs20201cG10.modelo.Orden;
@@ -19,7 +20,7 @@ public class OrdenServicio {
 	OrdenItemRepositorio  ordenItemRepositorio;
 	
 	
-	public Page<Orden> listarOrden(){
+	public Page<Orden> listarOrden(Pageable pageable){
 		return null;
 	}
 	
