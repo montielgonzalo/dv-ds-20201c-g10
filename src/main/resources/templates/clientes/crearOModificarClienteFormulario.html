@@ -8,9 +8,9 @@
     <title>DV-DS-20201C :: Ejemplo de una aplicación con Spring</title>
 
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/2.3.0/css/bootstrap.min.css}" rel="stylesheet" />
+          th:href="@{/webjars/bootstrap/2.3.0/css/bootstrap.min.css}" rel="stylesheet"/>
     <link href="../images/css/petclinic.css"
-          th:href="@{../css/petclinic.css}" rel="stylesheet" />
+          th:href="@{../css/petclinic.css}" rel="stylesheet"/>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"
             th:src="@{/webjars/jquery/1.9.0/jquery.js}"></script>
@@ -18,7 +18,7 @@
             th:src="@{/webjars/jquery-ui/1.9.2/js/jquery-ui-1.9.2.custom.js}"></script>
 
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css"
-          th:href="@{/webjars/jquery-ui/1.9.2/css/smoothness/jquery-ui-1.9.2.custom.css}" rel="stylesheet" />
+          th:href="@{/webjars/jquery-ui/1.9.2/css/smoothness/jquery-ui-1.9.2.custom.css}" rel="stylesheet"/>
 </head>
 
 <body>
@@ -33,10 +33,15 @@
             <div class="navbar-inner">
                 <ul class="nav">
                     <li style="width: 100px;"><a href="#" th:href="@{/myapp}"><i class="icon-home"></i>Home</a></li>
-                    <li style="width: 130px;"><a href="../clientes/clientes.html" th:href="@{/myapp/cliente/listar}"><i class="icon-search"></i>Clientes a</a></li>
-                    <li style="width: 140px;"><a href="./vets/vetList.html" th:href="@{/vets.html}"><i class="icon-th-list"></i>Veterinarians</a></li>
-                    <li style="width: 90px;"><a href="./exception.html" th:href="@{/oups.html}" title="trigger a RuntimeException to see how it is handled"><i class="icon-warning-sign"></i>Error</a></li>
-                    <li style="width: 80px;"><a href="#" title="not available yet. Work in progress!!"><i class=" icon-question-sign"></i>Help</a></li>
+                    <li style="width: 130px;"><a href="../clientes/clientes.html" th:href="@{/myapp/cliente/listar}"><i
+                            class="icon-search"></i>Clientes a</a></li>
+                    <li style="width: 140px;"><a href="./vets/vetList.html" th:href="@{/vets.html}"><i
+                            class="icon-th-list"></i>Veterinarians</a></li>
+                    <li style="width: 90px;"><a href="./exception.html" th:href="@{/oups.html}"
+                                                title="trigger a RuntimeException to see how it is handled"><i
+                            class="icon-warning-sign"></i>Error</a></li>
+                    <li style="width: 80px;"><a href="#" title="not available yet. Work in progress!!"><i
+                            class=" icon-question-sign"></i>Help</a></li>
                 </ul>
             </div>
         </div>
@@ -45,54 +50,53 @@
     </div>
 
     <h2>
-      <span th:if="${cliente.id} == null" th:remove="tag">New</span> Clientes
+        <span th:if="${cliente.id} == null" th:remove="tag">New</span> Clientes
     </h2>
 
     <form th:object="${cliente}" th:method="post" action="./detalleClientes.html"
-        th:action="@{${#httpServletRequest.servletPath}}" class="form-horizontal" id="add-cliente-form">
-        <div class="control-group">
-            <label class="control-label"><span th:if="${cliente.id} != null" th:remove="tag">ID</span></label>
-            <div class="controls">
-                <input th:if="${cliente.id} != null" type="text" th:field="*{id}" readonly="true"/>
-            </div>
-        </div>
-        <div class="control-group" th:classappend="${#fields.hasErrors('name')} ? error">
-            <label class="control-label">First Name</label>
-            <div class="controls">
-                <input type="text" th:field="*{name}" />
+          th:action="@{${#httpServletRequest.servletPath}}" id="add-cliente-form">
+        <div class="form-group">
+            <label><span th:if="${cliente.id} != null" class="form-control" th:remove="tag">ID</span></label>
+
+                <input th:if="${cliente.id} != null" type="text" class="form-control" th:field="*{id}" readonly="true"/>
+
+
+        <div th:classappend="${#fields.hasErrors('name')} ? error">
+            <label>First Name</label>
+
+                <input type="text" class="form-control" th:field="*{name}"/>
                 <span class="help-inline" th:errors="*{name}">[error]</span>
-            </div>
+
         </div>
 
-        <div class="control-group" th:classappend="${#fields.hasErrors('lastName')} ? error">
-            <label class="control-label">Last Name</label>
-            <div class="controls">
-                <input type="text" th:field="*{lastName}" />
-                <span class="help-inline" th:errors="*{lastName}">[error]</span>
-            </div>
+        <div th:classappend="${#fields.hasErrors('lastName')} ? error">
+            <label>Last Name</label>
+            <input type="text" class="form-control" th:field="*{lastName}"/>
+            <span class="help-inline" th:errors="*{lastName}">[error]</span>
+
         </div>
 
-        <div class="control-group" th:classappend="${#fields.hasErrors('email')} ? error">
-            <label class="control-label">Email</label>
-            <div class="controls">
-                <input type="text" th:field="*{email}" />
-                <span class="help-inline" th:errors="*{email}">[error]</span>
-            </div>
+        <div th:classappend="${#fields.hasErrors('email')} ? error">
+            <label>Email</label>
+
+            <input type="text" class="form-control" th:field="*{email}"/>
+            <span class="help-inline" th:errors="*{email}">[error]</span>
+
         </div>
 
-        <div class="control-group" th:classappend="${#fields.hasErrors('password')} ? error">
-            <label class="control-label">Password</label>
-            <div class="controls">
-                <input type="text" th:field="*{password}" />
-                <span class="help-inline" th:errors="*{password}">[error]</span>
-            </div>
-        </div>
+        <div th:classappend="${#fields.hasErrors('password')} ? error">
+            <label>Password</label>
 
+            <input type="text" class="form-control" th:field="*{password}"/>
+            <span class="help-inline" th:errors="*{password}">[error]</span>
+
+        </div>
+        </div>
         <!--
-        <div class="control-group" th:classappend="${#fields.hasErrors('telephone')} ? error">
-            <label class="control-label">Telephone</label>
+        <div  th:classappend="${#fields.hasErrors('telephone')} ? error">
+            <label>Telephone</label>
             <div class="controls">
-                <input type="text" th:field="*{telephone}" />
+                <input type="text" class="form-group" th:field="*{telephone}" />
                 <span class="help-inline" th:errors="*{telephone}">[error]</span>
             </div>
         </div>
@@ -108,9 +112,9 @@
         <tr>
             <td></td>
             <td align="right">
-               <img src="../images/springsource-logo.png"
-                    th:src="@{/images/springsource-logo.png}"
-                    alt="Sponsored by SpringSource" />
+                <img src="../images/springsource-logo.png"
+                     th:src="@{/images/springsource-logo.png}"
+                     alt="Sponsored by SpringSource"/>
             </td>
         </tr>
     </table>
